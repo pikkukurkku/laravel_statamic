@@ -1,1 +1,120 @@
-{{ content }}
+<main class="px-4 py-8">
+    {{ if assets_field or grid_field }}
+   <section class="bg-gray-900 text-white flex items-center gap-6 px-8 py-6 rounded-xl">
+    {{ assets_field:first }}
+   <img src="{{ url }}" alt="{{ alt or 'Logo' }}" style="width: 48px; height: 48px; object-fit: contain;" />
+    {{ /assets_field:first }}
+    <div class="bg-red-500 text-white p-4 rounded mb-4">
+        Tailwind Test - This should be red with white text
+      </div>
+      
+    <!-- Tabs-style navigation -->
+    <nav class="border-4 border-black rounded-lg inline-flex h-9 w-fit items-center justify-center p-[3px] bg-[#121212] shadow-lg">
+     <div class="flex gap-0">
+      {{ grid_field }}
+      {{ if text_field_1 }}
+      <a href="#" class="inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-colors duration-200 ease-in-out text-gray-400 hover:text-gray-200 bg-[#121212] hover:bg-gray-800">
+       {{ text_field_1 }}
+      </a>
+      {{ /if }}
+      {{ if text_field_2 }}
+      <a href="#" class="inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-colors duration-200 ease-in-out text-gray-400 hover:text-gray-200 bg-[#121212] hover:bg-gray-800">
+       {{ text_field_2 }}
+      </a>
+      {{ /if }}
+      {{ if text_field_3 }}
+      <a href="#" class="inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-colors duration-200 ease-in-out text-gray-400 hover:text-gray-200 bg-[#121212] hover:bg-gray-800">
+       {{ text_field_3 }}
+      </a>
+      {{ /if }}
+      {{ if text_field_4 }}
+      <a href="#" class="inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-colors duration-200 ease-in-out text-gray-400 hover:text-gray-200 bg-[#121212] hover:bg-gray-800">
+       {{ text_field_4 }}
+      </a>
+      {{ /if }}
+      {{ if text_field_5 }}
+      <a href="#" class="inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-colors duration-200 ease-in-out text-gray-400 hover:text-gray-200 bg-[#121212] hover:bg-gray-800">
+       {{ text_field_5 }}
+      </a>
+      {{ /if }}
+      {{ /grid_field }}
+     </div>
+    </nav>
+    
+    <!-- Optional: Add active state styling with some JavaScript -->
+    <style>
+     .nav-tab.active {
+      background-color: white !important;
+      color: black !important;
+      font-weight: 600 !important;
+      box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05) !important;
+      border-color: rgb(209 213 219) !important;
+     }
+    </style>
+    
+   </section>
+    {{ /if }}
+
+{{ sections }}
+  {{ if type == "hero" }}
+    <section id="hero">
+      <h1>{{ headline }}</h1>
+      <p>{{ subheadline }}</p>
+      <video autoplay muted loop>
+        <source src="{{ background_image }}" type="video/mp4">
+      </video>
+    </section>
+  {{ /if }}
+
+  {{ if type == "projects" }}
+    <section id="projects">
+      <h2>Projects Section</h2>
+      <!-- Add your custom rendering logic -->
+    </section>
+  {{ /if }}
+
+  {{ if type == "kunden" }}
+    <section id="kunden">
+      <h2>Unsere Kunden</h2>
+      {{ kunden_list }}
+        <div class="kunde">
+          <strong>{{ name }}</strong>
+          <img src="{{ logo }}" alt="{{ name }}">
+        </div>
+      {{ /kunden_list }}
+    </section>
+  {{ /if }}
+
+  {{ if type == "seitwerk_video" }}
+    <section id="seitwerk-video">
+        {{ if video_url }}
+        {{ video_url }}
+          {{ if contains "youtube.com/watch" }}
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/{{ video_url after '=' }}"
+              frameborder="0"
+              allowfullscreen>
+            </iframe>
+          {{ else }}
+            <a href="{{ video_url }}" target="_blank" rel="noopener">Watch Video</a>
+          {{ /if }}
+        {{ /video_url }}
+      {{ /if }}
+      
+    </section>
+  {{ /if }}
+
+  {{ if type == "footer" }}
+    <footer>
+      <p>{{ footer_text }}</p>
+      <ul>
+        {{ links }}
+          <li><a href="{{ url }}">{{ label }}</a></li>
+        {{ /links }}
+      </ul>
+    </footer>
+  {{ /if }}
+{{ /sections }}
+</main>

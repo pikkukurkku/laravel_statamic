@@ -1,0 +1,187 @@
+title: Homepage
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        display: 'Content Sections'
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+          -
+            handle: assets_field
+            field:
+              container: assets
+              type: assets
+              display: 'Assets Field'
+          -
+            handle: grid_field
+            field:
+              type: grid
+              display: 'Grid Field'
+              fields:
+                -
+                  handle: text_field_1
+                  field:
+                    type: text
+                    display: 'Text Field'
+                -
+                  handle: text_field_2
+                  field:
+                    type: text
+                    display: 'Text Field'
+                -
+                  handle: text_field_3
+                  field:
+                    type: text
+                    display: 'Text Field'
+                -
+                  handle: text_field_4
+                  field:
+                    type: text
+                    display: 'Text Field'
+                -
+                  handle: text_field_5
+                  field:
+                    type: text
+                    display: 'Text Field'
+          -
+            handle: button_group_field
+            field:
+              type: button_group
+              display: 'Button Group Field'
+          -
+            handle: sections
+            field:
+              type: replicator
+              sets:
+                hero:
+                  display: 'Hero Section'
+                  fields:
+                    -
+                      handle: headline
+                      field:
+                        type: text
+                        instructions: 'Main headline text'
+                    -
+                      handle: subheadline
+                      field:
+                        type: textarea
+                    -
+                      handle: background_image
+                      field:
+                        type: assets
+                        max_files: 1
+                projects:
+                  display: 'Projects Section'
+                  fields:
+                    -
+                      handle: projects
+                      field:
+                        type: entries
+                        collection: projects
+                        max_items: 6
+                kunden:
+                  display: 'Kunden Section'
+                  fields:
+                    -
+                      handle: kunden_list
+                      field:
+                        type: replicator
+                        sets:
+                          kunde:
+                            display: Kunde
+                            fields:
+                              -
+                                handle: name
+                                field:
+                                  type: text
+                              -
+                                handle: logo
+                                field:
+                                  type: assets
+                                  max_files: 1
+                seitwerk_video:
+                  display: 'Video Section'
+                  fields:
+                    -
+                      handle: video_url
+                      field:
+                        type: text
+                        instructions: 'URL to Vimeo or YouTube'
+                footer:
+                  display: Footer
+                  fields:
+                    -
+                      handle: footer_text
+                      field:
+                        type: textarea
+                    -
+                      handle: links
+                      field:
+                        type: grid
+                        fields:
+                          -
+                            handle: label
+                            field:
+                              type: text
+                          -
+                            handle: url
+                            field:
+                              type: text
+          -
+            handle: bard_field
+            field:
+              remove_empty_nodes: false
+              type: bard
+              display: 'Bard Field'
+              inline: true
+              sets:
+                navigation_block:
+                  display: 'Navigation Block'
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields:
+                        -
+                          handle: assets_field
+                          field:
+                            container: assets
+                            type: assets
+                            display: 'Assets Field'
+                        -
+                          handle: grid_field
+                          field:
+                            type: grid
+                            display: 'Grid Field'
+                            fields:
+                              -
+                                import: navelements
+                        -
+                          handle: button_group_field
+                          field:
+                            type: button_group
+                            display: 'Button Group Field'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - pages
+              max_items: 1
+              listable: false
+              localizable: true
