@@ -10,6 +10,9 @@ sections:
     background_image: 6063382_colleague-laptop-conference-room-working_by_yuki_film_artlist_hd.mp4
     type: hero
     enabled: true
+    button_1_text: 'UX / UI Design'
+    button_2_text: 'Web / App Entwicklung'
+    button_3_text: Multimedia
   -
     id: mcsw00z3
     type: projects
@@ -41,9 +44,9 @@ sections:
     type: footer
     enabled: true
 updated_by: 30f3e27a-5870-4459-b308-e9de0bbdcbb5
-updated_at: 1751880908
+updated_at: 1751890819
 assets_field:
-  - 1-e67bbdb9.jpg
+  - logo.png
 grid_field:
   -
     id: mcswn9s1
