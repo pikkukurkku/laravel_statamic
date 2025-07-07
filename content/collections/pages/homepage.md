@@ -21,11 +21,35 @@ sections:
         id: mct4bqi1
         title: 'Unsere neue Zusammenarbeit mit der FIS'
         description: 'FIS - International Ski and Snowboard Federation'
-        media_type: image
+        media_type: video
         type: project
         enabled: true
         media_src: 'https://www.seitwerk.de//media/datastore/cms/media/artikel/2024-10-fis/fis-app-kackel-720p.mp4'
         media_poster: 'https://www.seitwerk.de/media/cache/imageTablet/cms/media/artikel/2024-10-fis/vorschaubild.jpg'
+      -
+        id: mct7vc1o
+        title: 'Digitale Spielmacher: Unsere App für den Pokalsieger'
+        description: 'VfB Stuttgart'
+        media_type: video
+        media_src: 'https://www.seitwerk.de/media/datastore/cms/media/artikel/2025-05-vfb-app/vfb-pressemeldung.mp4'
+        type: project
+        enabled: true
+      -
+        id: mct7wayr
+        title: 'Frischer Glanz für den Pierre Boulez Saal'
+        description: 'Pierre Boulez Saal'
+        media_type: video
+        media_src: 'https://www.seitwerk.de/media/datastore/cms/media/artikel/2025-05-pierre-boulez/pressemeldung-pierre-boulez-saal.mp4'
+        type: project
+        enabled: true
+      -
+        id: mct7ytph
+        title: 'Startseite von TDK Electrinics glänzt mit neuem Design'
+        description: 'Mit Automobilpartnern in die Zukunft'
+        media_type: image
+        media_src: 'https://www.seitwerk.de/media/cache/base_image_block/cms/media/artikel/2024-08-tdk-elektronics/detailseite.jpg'
+        type: project
+        enabled: true
     type: projects_section
     enabled: true
   -
@@ -55,7 +79,7 @@ sections:
     type: footer
     enabled: true
 updated_by: 30f3e27a-5870-4459-b308-e9de0bbdcbb5
-updated_at: 1751893969
+updated_at: 1751899920
 assets_field:
   - logo.png
 grid_field:
