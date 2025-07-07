@@ -1,0 +1,27 @@
+<section id="projects" class="projects-section">
+    <h2>Projects Section</h2>
+
+    {{ projects }}
+      <article class="project-item">
+        <h3>{{ title }}</h3>
+        <p>{{ description }}</p>
+
+        {{ if media_type == "image" }}
+          <img src="{{ media_src }}" alt="{{ title }}" />
+        {{ elseif media_type == "video" }}
+          <video 
+            autoplay 
+            muted 
+            loop 
+            playsinline
+            {{ if media_poster }} poster="{{ media_poster }}" {{ /if }}
+          >
+            <source src="{{ media_src }}" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        {{ /if }}
+
+      </article>
+    {{ /projects }}
+
+  </section>

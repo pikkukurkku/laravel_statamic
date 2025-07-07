@@ -1,0 +1,149 @@
+<header class="fixed top-0 left-0 w-full bg-[#1a1a1a] text-white p-4 transition-transform duration-300 ease-in-out z-50" id="header">
+    <div class="flex items-center p-7">
+      <!-- Logo -->
+      {{ assets_field:first }}
+        <img src="{{ url }}" alt="{{ alt or 'Logo' }}" class="h-[50px] w-auto object-contain" />
+      {{ /assets_field:first }}
+
+      <!-- Navigation Tabs -->
+      <nav class="flex-grow flex justify-center">
+        <div class="border-4 border-black rounded-lg inline-flex h-9 w-fit items-center justify-center p-[3px] bg-[#121212] shadow-lg">
+          {{ grid_field }}
+            {{ if text_field_1 }}
+              <a href="#home" class="nav-tab inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-colors duration-200 ease-in-out text-gray-400 hover:text-gray-200 bg-[#121212] hover:bg-gray-800 uppercase">
+                {{ text_field_1 }}
+              </a>
+            {{ /if }}
+            {{ if text_field_2 }}
+              <a href="#projects" class="nav-tab inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-colors duration-200 ease-in-out text-gray-400 hover:text-gray-200 bg-[#121212] hover:bg-gray-800 uppercase">
+                {{ text_field_2 }}
+              </a>
+            {{ /if }}
+            {{ if text_field_3 }}
+              <a href="#kunden" class="nav-tab inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-colors duration-200 ease-in-out text-gray-400 hover:text-gray-200 bg-[#121212] hover:bg-gray-800 uppercase">
+                {{ text_field_3 }}
+              </a>
+            {{ /if }}
+            {{ if text_field_4 }}
+              <a href="#seitwerk-video" class="nav-tab inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-colors duration-200 ease-in-out text-gray-400 hover:text-gray-200 bg-[#121212] hover:bg-gray-800 uppercase">
+                {{ text_field_4 }}
+              </a>
+            {{ /if }}
+            {{ if text_field_5 }}
+              <a href="#footer" class="nav-tab inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-colors duration-200 ease-in-out text-gray-400 hover:text-gray-200 bg-[#121212] hover:bg-gray-800 uppercase">
+                {{ text_field_5 }}
+              </a>
+            {{ /if }}
+          {{ /grid_field }}
+        </div>
+      </nav>
+
+      <!-- Language Toggle Button -->
+      <button id="language-toggle" class="ml-4 px-3 py-1.5 rounded-full text-sm font-medium border border-white/20 hover:border-white transition-colors duration-200" aria-label="Toggle language">
+        <span class="text-white">{{ locale == 'en' ? 'DE' : 'EN' }}</span>
+      </button>
+    </div>
+  </header>
+
+      <!-- Active Tab Styling -->
+      <style>
+        .nav-tab.active {
+          background-color: white !important;
+          color: black !important;
+          font-weight: 600 !important;
+          box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05) !important;
+          border-color: rgb(209 213 219) !important;
+        }
+      </style>
+    
+      <!-- JavaScript for Scroll Behavior, Active Tab, and Language Toggle -->
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          // Scroll Behavior
+          let lastScrollY = 0;
+          let didScroll = false;
+          const delta = 10;
+          const header = document.getElementById('header');
+    
+          const handleScroll = () => {
+            didScroll = true;
+          };
+    
+          const checkScroll = () => {
+            if (!didScroll) return;
+            didScroll = false;
+    
+            const currentY = window.scrollY;
+            if (Math.abs(currentY - lastScrollY) <= delta) return;
+    
+            if (currentY <= 0) {
+              header.classList.remove('translate-y-[-100%]');
+            } else if (currentY > lastScrollY) {
+              header.classList.add('translate-y-[-100%]');
+            } else {
+              header.classList.remove('translate-y-[-100%]');
+            }
+    
+            lastScrollY = currentY;
+          };
+    
+          window.addEventListener('scroll', handleScroll);
+          setInterval(checkScroll, 100);
+    
+          // Smooth Scrolling and Active Tab
+          const navTabs = document.querySelectorAll('.nav-tab');
+          navTabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+              e.preventDefault();
+              const href = tab.getAttribute('href').replace('#', '');
+              const element = document.getElementById(href);
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                navTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+              }
+            });
+          });
+    
+          // Set active tab based on current scroll position
+          const sections = document.querySelectorAll('section[id], footer[id]');
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  const id = entry.target.id;
+                  navTabs.forEach(tab => {
+                    tab.classList.remove('active');
+                    if (tab.getAttribute('href') === `#${id}`) {
+                      tab.classList.add('active');
+                    }
+                  });
+                }
+              });
+            },
+            { threshold: 0.5 }
+          );
+    
+          sections.forEach(section => observer.observe(section));
+    
+          // Language Toggle
+          const toggleButton = document.getElementById('language-toggle');
+          toggleButton.addEventListener('click', () => {
+            const currentLocale = '{{ locale }}';
+            const newLocale = currentLocale === 'en' ? 'de' : 'en';
+            let newPathname = window.location.pathname;
+    
+            if (newPathname.startsWith('/de') || newPathname.startsWith('/en')) {
+              newPathname = newPathname.replace(/^\/[a-z]{2}/, `/${newLocale}`);
+            } else {
+              newPathname = `/${newLocale}${newPathname}`;
+            }
+    
+            if (newPathname === `/${newLocale}/`) {
+              newPathname = `/${newLocale}`;
+            }
+    
+            window.location.href = newPathname;
+          });
+        });
+      </script>

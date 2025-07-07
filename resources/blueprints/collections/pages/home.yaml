@@ -105,15 +105,61 @@ tabs:
                           field:
                             type: text
                             display: 'Button 3 URL'
-                    projects:
+                        -
+                          handle: button_4_text
+                          field:
+                            type: text
+                            display: 'Button 4 Text'
+                        -
+                          handle: button_4_url
+                          field:
+                            type: text
+                            display: 'Button 4 URL'
+                    projects_section:
                       display: 'Projects Section'
                       fields:
                         -
                           handle: projects
                           field:
-                            type: entries
-                            collection: projects
-                            max_items: 6
+                            type: replicator
+                            display: 'Projects'
+                            sets:
+                              project:
+                                display: 'Project'
+                                fields:
+                                  -
+                                    handle: title
+                                    field:
+                                      type: text
+                                      display: Title
+                                      validate:
+                                        - required
+                                  -
+                                    handle: description
+                                    field:
+                                      type: textarea
+                                      display: Description
+                                  -
+                                    handle: media_type
+                                    field:
+                                      type: button_group
+                                      display: Media Type
+                                      options:
+                                        image: Image
+                                        video: Video (mp4)
+                                      default: image
+                                  -
+                                    handle: media_src
+                                    field:
+                                      type: text
+                                      display: Media Source URL
+                                      instructions: "Enter the full URL to the image or video file"
+                                  -
+                                    handle: media_poster
+                                    field:
+                                      type: text
+                                      display: Video Poster URL (optional)
+                                      instructions: "Only for videos - enter full URL to poster image"
                     kunden:
                       display: 'Kunden Section'
                       fields:

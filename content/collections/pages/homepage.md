@@ -13,9 +13,20 @@ sections:
     button_1_text: 'UX / UI Design'
     button_2_text: 'Web / App Entwicklung'
     button_3_text: Multimedia
+    button_4_text: E-Learning
   -
-    id: mcsw00z3
-    type: projects
+    id: mct4bgyq
+    projects:
+      -
+        id: mct4bqi1
+        title: 'Unsere neue Zusammenarbeit mit der FIS'
+        description: 'FIS - International Ski and Snowboard Federation'
+        media_type: image
+        type: project
+        enabled: true
+        media_src: 'https://www.seitwerk.de//media/datastore/cms/media/artikel/2024-10-fis/fis-app-kackel-720p.mp4'
+        media_poster: 'https://www.seitwerk.de/media/cache/imageTablet/cms/media/artikel/2024-10-fis/vorschaubild.jpg'
+    type: projects_section
     enabled: true
   -
     id: mcsw0nah
@@ -30,7 +41,7 @@ sections:
     enabled: true
   -
     id: mcsw1cat
-    video_url: 'https://www.youtube.com/watch?v=-fWw7FE9tTo&list=RD7epRPz0LGPE&index=3'
+    video_url: 'https://www.seitwerk.de/media/kira-video/KIRA_Version_04.mp4'
     type: seitwerk_video
     enabled: true
   -
@@ -44,7 +55,7 @@ sections:
     type: footer
     enabled: true
 updated_by: 30f3e27a-5870-4459-b308-e9de0bbdcbb5
-updated_at: 1751890819
+updated_at: 1751893969
 assets_field:
   - logo.png
 grid_field:
