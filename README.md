@@ -1,6 +1,6 @@
 ## About this repo
 
-In this project I am redesigning the existing [Seitwerk website](https://www.seitwerk.de/de/home) to practice use of Laravel, Vue and Statamic.
+In this project I am redesigning the existing [Seitwerk website](https://www.seitwerk.de/de/home) to practice the use of Laravel, Vue and Statamic.
 
 
 ## Learning Statamic
