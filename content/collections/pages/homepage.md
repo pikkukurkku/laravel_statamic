@@ -52,6 +52,15 @@ sections:
         enabled: true
     type: projects_section
     enabled: true
+    headline: 'Wir sind Experte für'
+    industries:
+      - Sport
+      - Gesundheit
+      - 'Kultur & Freizeit'
+      - Tourismus
+      - Automobil
+    intro: 'Seitwerk bietet seit 2004 als inhabergeführtes Unternehmen das ganze Spektrum der Neuen Medien unter einem Dach. Unsere Spezialisten liefern von der Konzeption über das Design bis zur Realisierung alles aus einer Hand. Wir beraten, analysieren, entwerfen, programmieren, erstellen Animationen, produzieren Ton- und Videosequenzen im eigenen Studio und vieles mehr.'
+    subheadline: 'Hier sind ein paar unserer Lieblingsprojekte'
   -
     id: mcsw0nah
     kunden_list:
@@ -79,7 +88,7 @@ sections:
     type: footer
     enabled: true
 updated_by: 30f3e27a-5870-4459-b308-e9de0bbdcbb5
-updated_at: 1751899920
+updated_at: 1751963498
 assets_field:
   - logo.png
 grid_field:

@@ -118,7 +118,30 @@ tabs:
                     projects_section:
                       display: 'Projects Section'
                       fields:
-                        -
+                         -
+                          handle: headline
+                          field:
+                            type: text
+                            display: Headline
+                            validate:
+                              - required
+                         -
+                          handle: industries
+                          field:
+                            type: list
+                            display: Industries
+                            instructions: 'Add each industry to cycle through.'
+                         -
+                          handle: intro
+                          field:
+                            type: textarea
+                            display: Intro
+                         -
+                          handle: subheadline
+                          field:
+                            type: text
+                            display: Subheadline
+                         -
                           handle: projects
                           field:
                             type: replicator
