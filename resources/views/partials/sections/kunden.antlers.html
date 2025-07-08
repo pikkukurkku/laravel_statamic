@@ -1,9 +1,29 @@
-<section id="kunden">
-    <h2>Unsere Kunden</h2>
+<section id="kunden" class="w-full bg-gradient-to-b from-[#1f1f1f] to-[#121212] text-white px-4 md:px-12 py-20 flex flex-col gap-14 shadow-inner">
+  <h2 class="text-3xl font-semibold text-left font-poppins border-l-4 border-teal-500 pl-4">{{ headline }}</h2>
+  <p class="text-xl md:text-lg max-w-[55%]">{{ intro }}</p>
+
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10 place-items-center">
     {{ kunden_list }}
-      <div class="kunde">
-        <strong>{{ name }}</strong>
-        <img src="{{ logo }}" alt="{{ name }}">
+      <div class="kunde opacity-0 animate-fade-in transition-opacity duration-500">
+        <img src="{{ media_src }}" alt="{{ media_alt }}" class="w-[150px] h-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300" />
       </div>
     {{ /kunden_list }}
-  </section>
+  </div>
+
+  <style>
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+  </style>
+</section>

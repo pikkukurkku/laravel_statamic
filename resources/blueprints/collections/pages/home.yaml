@@ -118,37 +118,37 @@ tabs:
                     projects_section:
                       display: 'Projects Section'
                       fields:
-                         -
+                        -
                           handle: headline
                           field:
                             type: text
                             display: Headline
                             validate:
                               - required
-                         -
+                        -
                           handle: industries
                           field:
                             type: list
                             display: Industries
                             instructions: 'Add each industry to cycle through.'
-                         -
+                        -
                           handle: intro
                           field:
                             type: textarea
                             display: Intro
-                         -
+                        -
                           handle: subheadline
                           field:
                             type: text
                             display: Subheadline
-                         -
+                        -
                           handle: projects
                           field:
                             type: replicator
-                            display: 'Projects'
+                            display: Projects
                             sets:
                               project:
-                                display: 'Project'
+                                display: Project
                                 fields:
                                   -
                                     handle: title
@@ -166,51 +166,63 @@ tabs:
                                     handle: media_type
                                     field:
                                       type: button_group
-                                      display: Media Type
+                                      display: 'Media Type'
                                       options:
                                         image: Image
-                                        video: Video (mp4)
+                                        video: 'Video (mp4)'
                                       default: image
                                   -
                                     handle: media_src
                                     field:
                                       type: text
-                                      display: Media Source URL
-                                      instructions: "Enter the full URL to the image or video file"
+                                      display: 'Media Source URL'
+                                      instructions: 'Enter the full URL to the image or video file'
                                   -
                                     handle: media_poster
                                     field:
                                       type: text
-                                      display: Video Poster URL (optional)
-                                      instructions: "Only for videos - enter full URL to poster image"
+                                      display: 'Video Poster URL (optional)'
+                                      instructions: 'Only for videos - enter full URL to poster image'
                     kunden:
                       display: 'Kunden Section'
                       fields:
+                        -
+                          handle: headline
+                          field:
+                            type: text
+                            display: Headline
+                        -
+                          handle: intro
+                          field:
+                            type: text
+                            display: Intro
                         -
                           handle: kunden_list
                           field:
                             type: replicator
                             sets:
                               kunde:
-                                display: Kunde
-                                fields:
-                                  -
-                                    handle: name
-                                    field:
-                                      type: text
-                                  -
-                                    handle: logo
-                                    field:
-                                      type: assets
-                                      max_files: 1
+                               display: Kunde
+                               fields:
+                                -
+                                  handle: media_src
+                                  field:
+                                    type: text
+                                    display: 'Media Src'
+                                    instructions: 'Enter the full URL to the image'
+                                - handle: media_alt
+                                  field:
+                                    type: text
+                                    display: 'Alt Text'
+                                    instructions: 'Enter alt text for accessibility and SEO'
                     seitwerk_video:
-                      display: 'Video Section'
+                      display: 'Seitwerk Video Section'
                       fields:
-                        -
-                          handle: video_url
-                          field:
-                            type: text
-                            instructions: 'URL to Vimeo or YouTube'
+                          - handle: video_url
+                            field:
+                              type: text
+                              display: 'Video URL'
+                              instructions: 'Paste the full URL to the video (mp4 format only)'
                     footer:
                       display: Footer
                       fields:
@@ -231,56 +243,56 @@ tabs:
                                 handle: url
                                 field:
                                   type: text
-          -
-            handle: bard_field
-            field:
-              remove_empty_nodes: false
-              type: bard
-              display: 'Bard Field'
-              inline: true
-              sets:
-                navigation_block:
-                  display: 'Navigation Block'
-                  sets:
-                    new_set:
-                      display: 'New Set'
-                      fields:
-                        -
-                          handle: assets_field
-                          field:
-                            container: assets
-                            type: assets
-                            display: 'Assets Field'
-                        -
-                          handle: grid_field
-                          field:
-                            type: grid
-                            display: 'Grid Field'
+                              -
+                                handle: bard_field
+                                field:
+                                  remove_empty_nodes: false
+                                  type: bard
+                                  display: 'Bard Field'
+                                  inline: true
+                                  sets:
+                                    navigation_block:
+                                      display: 'Navigation Block'
+                                      sets:
+                                        new_set:
+                                          display: 'New Set'
+                                          fields:
+                                            -
+                                              handle: assets_field
+                                              field:
+                                                container: assets
+                                                type: assets
+                                                display: 'Assets Field'
+                                            -
+                                              handle: grid_field
+                                              field:
+                                                type: grid
+                                                display: 'Grid Field'
+                                                fields:
+                                                  -
+                                                    import: navelements
+                                            -
+                                              handle: button_group_field
+                                              field:
+                                                type: button_group
+                                                display: 'Button Group Field'
+                      sidebar:
+                        display: Sidebar
+                        sections:
+                          -
                             fields:
                               -
-                                import: navelements
-                        -
-                          handle: button_group_field
-                          field:
-                            type: button_group
-                            display: 'Button Group Field'
-  sidebar:
-    display: Sidebar
-    sections:
-      -
-        fields:
-          -
-            handle: slug
-            field:
-              type: slug
-              localizable: true
-              validate: 'max:200'
-          -
-            handle: parent
-            field:
-              type: entries
-              collections:
-                - pages
-              max_items: 1
-              listable: false
-              localizable: true
+                                handle: slug
+                                field:
+                                  type: slug
+                                  localizable: true
+                                  validate: 'max:200'
+                              -
+                                handle: parent
+                                field:
+                                  type: entries
+                                  collections:
+                                    - pages
+                                  max_items: 1
+                                  listable: false
+                                  localizable: true

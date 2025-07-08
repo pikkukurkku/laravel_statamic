@@ -70,8 +70,84 @@ sections:
         logo: images-2.jpeg
         type: kunde
         enabled: true
+        media_type: Image
+        media_src: 'https://www.seitwerk.de/media/image/cms/media/customer/tdk.png'
+        media_alt: 'TDK Electronics logo'
+      -
+        id: mcub8euf
+        media_src: 'https://www.seitwerk.de/media/image/cms/media/customer/barenboim-said-gmbh.png'
+        type: kunde
+        enabled: true
+        media_type: image
+        media_alt: 'Barenboim-Said Akademie gGmbH logo'
+      -
+        id: mcuclxor
+        media_src: 'https://www.seitwerk.de/media/image/cms/media/customer/vfb-logo-seitwerk.png'
+        media_alt: 'VfB Stuttgart logo'
+        type: kunde
+        enabled: true
+      -
+        id: mcucmqzp
+        media_src: 'https://www.seitwerk.de/media/image/cms/media/customer/siemensenergy-logo.png'
+        media_alt: 'Siemens Energy logo'
+        type: kunde
+        enabled: true
+      -
+        id: mcucn6ei
+        media_src: 'https://www.seitwerk.de/media/image/cms/media/customer/kraussmaffei-pioneering-plastics.png'
+        media_alt: 'KraussMaffei logo'
+        type: kunde
+        enabled: true
+      -
+        id: mcucp73v
+        media_src: 'https://www.seitwerk.de/media/image/cms/media/customer/mercedes-amg-petronas-logo.png'
+        media_alt: 'Mercedes AMG Petronas logo'
+        type: kunde
+        enabled: true
+      -
+        id: mcucqope
+        name: 'Mercedes Benz'
+        logo: images-2.jpeg
+        type: kunde
+        enabled: true
+        media_type: Image
+        media_src: 'https://www.seitwerk.de/media/image/cms/media/customer/tdk.png'
+        media_alt: 'TDK Electronics logo'
+      -
+        id: mcucqmz6
+        media_src: 'https://www.seitwerk.de/media/image/cms/media/customer/barenboim-said-gmbh.png'
+        type: kunde
+        enabled: true
+        media_type: image
+        media_alt: 'Barenboim-Said Akademie gGmbH logo'
+      -
+        id: mcucqkub
+        media_src: 'https://www.seitwerk.de/media/image/cms/media/customer/vfb-logo-seitwerk.png'
+        media_alt: 'VfB Stuttgart logo'
+        type: kunde
+        enabled: true
+      -
+        id: mcucqiz6
+        media_src: 'https://www.seitwerk.de/media/image/cms/media/customer/siemensenergy-logo.png'
+        media_alt: 'Siemens Energy logo'
+        type: kunde
+        enabled: true
+      -
+        id: mcucqgoq
+        media_src: 'https://www.seitwerk.de/media/image/cms/media/customer/kraussmaffei-pioneering-plastics.png'
+        media_alt: 'KraussMaffei logo'
+        type: kunde
+        enabled: true
+      -
+        id: mcucqcmq
+        media_src: 'https://www.seitwerk.de/media/image/cms/media/customer/mercedes-amg-petronas-logo.png'
+        media_alt: 'Mercedes AMG Petronas logo'
+        type: kunde
+        enabled: true
     type: kunden
     enabled: true
+    headline: 'Unsere Kunden'
+    intro: 'Seit 2004 profitieren unterschiedliche Unternehmen von unseren Leistungen: Unsere Kunden gehören zu den größten Unternehmen und Organisationen der Welt. Doch gleichzeitig sind wir offen, für kleine und mittelständige Unternehmen und unterstützen Gemeinden, Vereine und Firmen aus unserer Region.'
   -
     id: mcsw1cat
     video_url: 'https://www.seitwerk.de/media/kira-video/KIRA_Version_04.mp4'
@@ -88,7 +164,7 @@ sections:
     type: footer
     enabled: true
 updated_by: 30f3e27a-5870-4459-b308-e9de0bbdcbb5
-updated_at: 1751963498
+updated_at: 1751968740
 assets_field:
   - logo.png
 grid_field:
