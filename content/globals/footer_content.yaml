@@ -79,4 +79,4 @@ data:
       id: mcuj1q29
       label: Stellenangebote
       url: '#'
-  copyright_text: '© {currentYear} SEITWERK. Alle Rechte vorbehalten.'
+  copyright_text: '© {{ now format="Y" }} SEITWERK. Alle Rechte vorbehalten.'

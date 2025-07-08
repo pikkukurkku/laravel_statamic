@@ -56,13 +56,14 @@
 
     <div class="border-t border-gray-700 pt-8 mt-12">
       <div class="flex flex-col md:flex-row justify-between items-center">
-        <p class="text-gray-400">{{ footer_content:copyright_text }}</p>
+        <p class="text-gray-400">
+          © {{ now format="Y" }} {{ footer_content:brand_name }}. Alle Rechte vorbehalten.
+        </p>
         <div class="flex space-x-6 mt-4 md:mt-0">
           {{ footer_content:bottom_links }}
           <a href="{{ url }}" class="text-gray-400 hover:text-white transition-colors">{{ label }}</a>
           {{ /footer_content:bottom_links }}
         </div>
       </div>
-    </div>
-  </div>
+    </div>    
 </footer>
