@@ -1,0 +1,24 @@
+title: Header_content
+data:
+  company_logo: logo.png
+  header_items:
+    -
+      id: fOT3JUlh
+      label: Home
+      href: home
+    -
+      id: rbBGzPxv
+      label: projekte
+      href: projects
+    -
+      id: EhZsTJKg
+      label: KUNDEN
+      href: kunden
+    -
+      id: d4R20dLt
+      label: 'WERK & TEAM'
+      href: seitwerk-video
+    -
+      id: ZyFZNjgj
+      label: KONTAKT
+      href: footer

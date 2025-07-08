@@ -1,8 +1,4 @@
 <main>
-    <!-- Header Section -->
-    {{ partial:header}}
-  
-    <!-- Main Content Sections -->
     {{ sections }}
         {{ if type == "hero" }}
           {{ partial:sections/hero }}
@@ -19,9 +15,6 @@
         {{ if type == "seitwerk_video" }}
           {{ partial:sections/seitwerk_video }}
         {{ /if }}
-    
-        {{ if type == "footer" }}
-          {{ partial:sections/footer }}
-        {{ /if }}
-{{ /sections }}
+    {{ /sections }}
 </main>
+ 

@@ -153,26 +153,6 @@ sections:
     video_url: 'https://www.seitwerk.de/media/kira-video/KIRA_Version_04.mp4'
     type: seitwerk_video
     enabled: true
-  -
-    id: mcsw1kzj
-    footer_text: 'Seitwerk bietet seit 2004 als inhabergeführtes Unternehmen das ganze Spektrum der Neuen Medien unter einem Dach. Unsere Spezialisten liefern von der Konzeption über das Design bis zur Realisierung alles aus einer Hand. Wir beraten, analysieren, entwerfen, programmieren, erstellen Animationen, produzieren Ton- und Videosequenzen im eigenen Studio und vieles mehr.'
-    links:
-      -
-        id: mcsw1y7d
-        label: 'Linked in'
-        url: 'https://www.linkedin.com/company/seitwerk-gmbh/posts/?feedView=all'
-    type: footer
-    enabled: true
 updated_by: 30f3e27a-5870-4459-b308-e9de0bbdcbb5
-updated_at: 1751968740
-assets_field:
-  - logo.png
-grid_field:
-  -
-    id: mcswn9s1
-    text_field_1: Home
-    text_field_2: Projekte
-    text_field_3: Kunden
-    text_field_4: 'Werk & Team'
-    text_field_5: Kontakt
+updated_at: 1751984262
 ---

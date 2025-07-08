@@ -1,0 +1,82 @@
+title: Footer_content
+data:
+  brand_name: SEITWERK
+  description: 'Seitwerk bietet seit 2004 als inhabergeführtes Unternehmen das ganze Spektrum der Neuen Medien unter einem Dach. Unsere Spezialisten liefern von der Konzeption über das Design bis zur Realisierung alles aus einer Hand. Wir beraten, analysieren, entwerfen, programmieren, erstellen Animationen, produzieren Ton- und Videosequenzen im eigenen Studio und vieles mehr.'
+  logo: logo.png
+  social_links:
+    -
+      id: mcuj0arw
+      platform: instagram
+      url: 'https://instagram.com/seitwerk"'
+    -
+      id: mcuj0dkw
+      platform: facebook
+      url: 'https://facebook.com/seitwerk'
+    -
+      id: mcuj0p4a
+      platform: twitter
+      url: 'https://x.com/seitwerk'
+    -
+      id: mcuj0yh5
+      platform: linkedin
+      url: 'https://www.linkedin.com/company/seitwerk-gmbh/posts/?feedView=all'
+  sections:
+    -
+      id: mcuj26qd
+      image: seitwerk_uffing.png
+      image_alt: 'Seitwerk Logo'
+      lines:
+        -
+          id: mcuj33s3
+          type: text
+          value: 'Seitwerk GmbH'
+        -
+          id: mcuj3caz
+          type: text
+          value: 'Sonnensteinstraße 1'
+        -
+          id: mcuj3pga
+          type: text
+          value: '82449 Uffing am Staffelsee'
+        -
+          id: mcuj3sm9
+          type: phone
+          value: 'Telefon: +49 (0) 8846 - 921 233 - 0'
+        -
+          id: mcuj46zu
+          type: email
+          value: 'Email: info@seitwerk.de'
+      type: image_block
+      enabled: true
+    -
+      id: mcuj8rmz
+      image: radio_oberland.png
+      image_alt: 'Radio Oberland Logo'
+      lines:
+        -
+          id: mcuj9e9h
+          type: text
+          value: 'Radio Oberland'
+        -
+          id: mcuj9jfg
+          type: text
+          value: 'Obermarkt 15'
+        -
+          id: mcuj9p8b
+          value: '82418 Murnau'
+      type: image_block
+      enabled: true
+  bottom_links:
+    -
+      id: mcuj13fj
+      label: Impressum
+      url: '#'
+    -
+      id: mcuj1jhd
+      label: Datenschutz
+      url: '#'
+    -
+      id: mcuj1q29
+      label: Stellenangebote
+      url: '#'
+  copyright_text: '© {currentYear} SEITWERK. Alle Rechte vorbehalten.'

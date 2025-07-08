@@ -1,0 +1,68 @@
+<footer id="footer" class="bg-[#1a1a1a] text-white py-16 px-4 md:px-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
+
+      <div class="lg:col-span-6">
+        <div class="min-h-[56px] flex items-center mb-4">
+        {{ if footer_content:logo }}
+        <img src="{{ footer_content:logo }}" alt="{{ footer_content:brand_name }}" class="h-12 mb-4">
+        {{ /if }}
+        <h1 class="text-xl font-bold mb-4">{{ footer_content:brand_name }}</h1>
+      </div>
+        <p class="text-gray-300 mb-6">{{ footer_content:description }}</p>
+
+        <div class="flex space-x-4">
+          {{ footer_content:social_links }}
+          <a href="{{ url }}" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fab fa-{{ platform }}"></i>
+          </a>
+          {{ /footer_content:social_links }}
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-8">
+        {{ footer_content:sections }}
+        {{ if type == "image_block" }}
+          <div>
+            {{ if image }}
+              <img src="{{ image }}" alt="{{ image_alt }}" class="h-14 mb-4" />
+            {{ /if }}
+      
+            <div class="text-gray-400 space-y-1">
+              {{ lines }}
+                {{ if type == "email" }}
+                  <div>
+                    <a href="mailto:{{ value | replace('Email:', '') | trim }}" class="hover:underline text-white">
+                      {{ value | replace('Email:', '') | trim }}
+                    </a>
+                  </div>
+                {{ elseif type == "phone" }}
+                  <div>
+                    <a href="tel:{{ value | replace('Telefon:', '') | trim }}" class="hover:underline text-white">
+                      {{ value | replace('Telefon:', '') | trim }}
+                    </a>
+                  </div>
+                {{ else }}
+                  <div>{{ value }}</div>
+                {{ /if }}
+              {{ /lines }}
+            </div>
+          </div>
+        {{ /if }}
+      {{ /footer_content:sections }}
+      
+      </div>
+    </div>
+
+    <div class="border-t border-gray-700 pt-8 mt-12">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400">{{ footer_content:copyright_text }}</p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+          {{ footer_content:bottom_links }}
+          <a href="{{ url }}" class="text-gray-400 hover:text-white transition-colors">{{ label }}</a>
+          {{ /footer_content:bottom_links }}
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

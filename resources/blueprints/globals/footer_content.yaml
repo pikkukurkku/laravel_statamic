@@ -1,0 +1,114 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: brand_name
+            field:
+              type: text
+              display: 'Brand Name'
+          -
+            handle: description
+            field:
+              type: textarea
+              display: Description
+          -
+            handle: logo
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Logo
+          -
+            handle: social_links
+            field:
+              type: grid
+              display: 'Social Links'
+              fields:
+                -
+                  handle: platform
+                  field:
+                    options:
+                      -
+                        key: instagram
+                        value: Instagram
+                      -
+                        key: facebook
+                        value: Facebook
+                      -
+                        key: twitter
+                        value: Twitter
+                      -
+                        key: linkedin
+                        value: LinkedIn
+                    type: select
+                    display: Platform
+                -
+                  handle: url
+                  field:
+                    type: text
+                    display: url
+          -
+            handle: sections
+            field:
+              type: replicator
+              display: sections
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    image_block:
+                      display: 'Image Block'
+                      fields:
+                        -
+                          handle: image
+                          field:
+                            max_files: 1
+                            container: assets
+                            type: assets
+                            display: image
+                        -
+                          handle: image_alt
+                          field:
+                            type: text
+                            display: 'image alt'
+                        - handle: lines
+                          field:
+                            type: grid
+                            display: Lines
+                            fields:
+                              - handle: type
+                                field:
+                                  type: select
+                                  display: Type
+                                  options:
+                                    text: Text
+                                    email: Email
+                                    phone: Phone
+                              - handle: value
+                                field:
+                                  type: text
+                                  display: Value
+          -
+            handle: bottom_links
+            field:
+              type: grid
+              display: 'Bottom Links'
+              fields:
+                -
+                  handle: label
+                  field:
+                    type: text
+                    display: label
+                -
+                  handle: url
+                  field:
+                    type: text
+                    display: url
+          -
+            handle: copyright_text
+            field:
+              type: text
+              display: 'Copyright Text'

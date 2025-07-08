@@ -1,0 +1,31 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: company_logo
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: 'Company Logo'
+          -
+            handle: header_items
+            field:
+              type: grid
+              display: 'Header Items'
+              add_row: 'Add Item'
+              fields:
+                -
+                  handle: label
+                  field:
+                    type: text
+                    display: 'Label'
+                -
+                  handle: href
+                  field:
+                    type: text
+                    display: 'Anchor ID (without #)'
+

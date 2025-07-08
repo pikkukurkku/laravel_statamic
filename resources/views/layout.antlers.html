@@ -4,12 +4,17 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
         <title>{{ title ?? site:name }}</title>
       {{ vite src="resources/css/site.css|resources/js/site.js" }}   
     </head>
     <body class="bg-slate-100 dark:bg-gray-800 font-sans leading-normal text-slate-800 dark:text-gray-400">
-        <div class="lg:min-h-screen flex flex-col items-center justify-center">
-            {{ template_content }}
+        <div class="min-h-screen flex flex-col">
+            {{ partial:header}}
+            <main class="flex-1 w-full">
+                {{ template_content }}
+            </main>
+            {{ partial:footer}}
         </div>
     </body>
 </html>

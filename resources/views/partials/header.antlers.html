@@ -1,40 +1,18 @@
 <header class="fixed top-0 left-0 w-full bg-[#1a1a1a] text-white p-4 transition-transform duration-300 ease-in-out z-50" id="header">
     <div class="flex items-center p-7">
       <!-- Logo -->
-      {{ assets_field:first }}
+      {{ header_content:company_logo }}
         <img src="{{ url }}" alt="{{ alt or 'Logo' }}" class="h-[50px] w-auto object-contain" />
-      {{ /assets_field:first }}
+      {{ /header_content:company_logo }}
 
       <!-- Navigation Tabs -->
       <nav class="flex-grow flex justify-center">
         <div class="border-4 border-black rounded-lg inline-flex h-9 w-fit items-center justify-center p-[3px] bg-[#121212] shadow-lg">
-          {{ grid_field }}
-            {{ if text_field_1 }}
-              <a href="#home" class="nav-tab inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-colors duration-200 ease-in-out text-gray-400 hover:text-gray-200 bg-[#121212] hover:bg-gray-800 uppercase">
-                {{ text_field_1 }}
-              </a>
-            {{ /if }}
-            {{ if text_field_2 }}
-              <a href="#projects" class="nav-tab inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-colors duration-200 ease-in-out text-gray-400 hover:text-gray-200 bg-[#121212] hover:bg-gray-800 uppercase">
-                {{ text_field_2 }}
-              </a>
-            {{ /if }}
-            {{ if text_field_3 }}
-              <a href="#kunden" class="nav-tab inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-colors duration-200 ease-in-out text-gray-400 hover:text-gray-200 bg-[#121212] hover:bg-gray-800 uppercase">
-                {{ text_field_3 }}
-              </a>
-            {{ /if }}
-            {{ if text_field_4 }}
-              <a href="#seitwerk-video" class="nav-tab inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-colors duration-200 ease-in-out text-gray-400 hover:text-gray-200 bg-[#121212] hover:bg-gray-800 uppercase">
-                {{ text_field_4 }}
-              </a>
-            {{ /if }}
-            {{ if text_field_5 }}
-              <a href="#footer" class="nav-tab inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-colors duration-200 ease-in-out text-gray-400 hover:text-gray-200 bg-[#121212] hover:bg-gray-800 uppercase">
-                {{ text_field_5 }}
-              </a>
-            {{ /if }}
-          {{ /grid_field }}
+          {{ header_content:header_items }}
+            <a href="#{{ href }}" class="nav-tab inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-colors duration-200 ease-in-out text-gray-400 hover:text-gray-200 bg-[#121212] hover:bg-gray-800 uppercase">
+              {{ label }}
+            </a>
+          {{ /header_content:header_items }}
         </div>
       </nav>
 

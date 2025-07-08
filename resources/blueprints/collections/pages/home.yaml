@@ -7,50 +7,6 @@ tabs:
         display: 'Content Sections'
         fields:
           -
-            handle: title
-            field:
-              type: text
-              required: true
-              validate:
-                - required
-          -
-            handle: assets_field
-            field:
-              container: assets
-              type: assets
-              display: 'Assets Field'
-          -
-            handle: grid_field
-            field:
-              type: grid
-              display: 'Grid Field'
-              fields:
-                -
-                  handle: text_field_1
-                  field:
-                    type: text
-                    display: 'Text Field'
-                -
-                  handle: text_field_2
-                  field:
-                    type: text
-                    display: 'Text Field'
-                -
-                  handle: text_field_3
-                  field:
-                    type: text
-                    display: 'Text Field'
-                -
-                  handle: text_field_4
-                  field:
-                    type: text
-                    display: 'Text Field'
-                -
-                  handle: text_field_5
-                  field:
-                    type: text
-                    display: 'Text Field'
-          -
             handle: sections
             field:
               type: replicator
@@ -223,59 +179,6 @@ tabs:
                               type: text
                               display: 'Video URL'
                               instructions: 'Paste the full URL to the video (mp4 format only)'
-                    footer:
-                      display: Footer
-                      fields:
-                        -
-                          handle: footer_text
-                          field:
-                            type: textarea
-                        -
-                          handle: links
-                          field:
-                            type: grid
-                            fields:
-                              -
-                                handle: label
-                                field:
-                                  type: text
-                              -
-                                handle: url
-                                field:
-                                  type: text
-                              -
-                                handle: bard_field
-                                field:
-                                  remove_empty_nodes: false
-                                  type: bard
-                                  display: 'Bard Field'
-                                  inline: true
-                                  sets:
-                                    navigation_block:
-                                      display: 'Navigation Block'
-                                      sets:
-                                        new_set:
-                                          display: 'New Set'
-                                          fields:
-                                            -
-                                              handle: assets_field
-                                              field:
-                                                container: assets
-                                                type: assets
-                                                display: 'Assets Field'
-                                            -
-                                              handle: grid_field
-                                              field:
-                                                type: grid
-                                                display: 'Grid Field'
-                                                fields:
-                                                  -
-                                                    import: navelements
-                                            -
-                                              handle: button_group_field
-                                              field:
-                                                type: button_group
-                                                display: 'Button Group Field'
                       sidebar:
                         display: Sidebar
                         sections:
