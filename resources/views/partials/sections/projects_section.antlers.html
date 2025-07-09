@@ -82,7 +82,7 @@
         <div class="flex justify-end">
           {{ /if }}
           <div class="min-w-[300px] max-w-[90vw] md:min-w-[400px] lg:min-w-[500px] snap-start">
-            <div class="relative w-full aspect-[9/9] overflow-hidden rounded-xs shadow-xl border-0 group">
+            <a href="{{ project_url }}" class="relative w-full aspect-[9/9] overflow-hidden rounded-xs shadow-xl border-0 group block">
               {{ if media_type == "image" }}
               <img src="{{ media_src }}" alt="{{ title }}"
                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -98,7 +98,7 @@
                 <h3 class="text-2xl font-bold">{{ title }}</h3>
                 <p class="text-sm text-white/80 mt-1">{{ description }}</p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
         {{ /projects }}

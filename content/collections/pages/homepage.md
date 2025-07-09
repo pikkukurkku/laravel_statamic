@@ -26,6 +26,7 @@ sections:
         enabled: true
         media_src: 'https://www.seitwerk.de//media/datastore/cms/media/artikel/2024-10-fis/fis-app-kackel-720p.mp4'
         media_poster: 'https://www.seitwerk.de/media/cache/imageTablet/cms/media/artikel/2024-10-fis/vorschaubild.jpg'
+        project_url: '/projects/fis-app'
       -
         id: mct7vc1o
         title: 'Digitale Spielmacher: Unsere App für den Pokalsieger'

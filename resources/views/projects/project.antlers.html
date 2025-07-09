@@ -1,0 +1,50 @@
+<article class="project-detail max-w-4xl mx-auto px-4 py-12">
+  <h1 class="text-4xl font-bold mb-6">{{ title }}</h1>
+  <div class="content space-y-4">
+  {{ if hero_image }}
+      <img src="{{ hero_image | url }}" alt="{{ title }}" class="mb-6 rounded shadow" />
+  {{ /if }}
+  
+  <p class="text-sm text-gray-600 mb-6">{{ intro }}</p>
+  
+  {{ content_sections }}
+      {{ if type == "text_block" }}
+          <section class="mb-8">
+              <h2 class="text-2xl font-semibold mb-3">{{ heading }}</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {{ if content }}
+                      <div class="prose max-w-none">{!! content | markdown !!}</div>
+                  {{ /if }}
+                  
+                  {{ if bard_field }}
+                      <div>
+                          {{ bard_field }}
+                              {{ if type == "set" && attrs.values.grid_field }}
+                                  <div class="client-info p-4 bg-gray-100 rounded">
+                                      {{ attrs.values.grid_field }}
+                                          <p><strong>{{ text_field }}:</strong> {{ client_name }}</p>
+                                          <p><strong>{{ services }}:</strong> {{ services_details }}</p>
+                                          <p><strong>{{ area }}:</strong> {{ area_details }}</p>
+                                      {{ /attrs.values.grid_field }}
+                                  </div>
+                              {{ /if }}
+                          {{ /bard_field }}
+                      </div>
+                  {{ /if }}
+              </div>
+              
+              {{ if project_hero_image }}
+                  <img src="{{ project_hero_image | url }}" alt="{{ heading }}" class="mt-6 rounded shadow" />
+              {{ /if }}
+              
+              {{ if english_translation }}
+                  <div class="mt-6">
+                      <h3 class="text-xl font-semibold mb-3">English Translation</h3>
+                      <div class="prose max-w-none whitespace-pre-line">{{ english_translation }}</div>
+                  </div>
+              {{ /if }}
+          </section>
+      {{ /if }}
+  {{ /content_sections }}
+</div>
+</article>

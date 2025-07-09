@@ -1,6 +1,6 @@
 ---
 id: 3b63c122-89b6-486b-a99e-8a50b9c2dfa0
-blueprint: subpage
+blueprint: impressum
 title: Impressum
 impressum_content:
   -
@@ -39,5 +39,5 @@ impressum_content:
     type: paragraph
 updated_by: 30f3e27a-5870-4459-b308-e9de0bbdcbb5
 updated_at: 1752042606
-template: default
+template: impressum
 ---

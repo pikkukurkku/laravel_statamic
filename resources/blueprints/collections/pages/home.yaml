@@ -139,6 +139,11 @@ tabs:
                                       type: text
                                       display: 'Video Poster URL (optional)'
                                       instructions: 'Only for videos - enter full URL to poster image'
+                                  - handle: project_url
+                                    field:
+                                      type: text
+                                      display: 'Project Page URL'
+                                      instructions: 'Enter the URL to the detail page (e.g., /projects/fis-app)'
                     kunden:
                       display: 'Kunden Section'
                       fields:

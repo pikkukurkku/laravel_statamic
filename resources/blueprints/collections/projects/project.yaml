@@ -1,0 +1,141 @@
+title: 'Project page'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: hero_image
+            field:
+              type: assets
+              display: 'Hero Image'
+              instructions: 'Upload a hero image to display at the bottom of the page.'
+              max_files: 1
+              container: assets
+              validate: required
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              display: Title
+              instructions: "The main title of the page (e.g., 'Digitale Innovation für den Wintersport')"
+              validate:
+                - required
+              default: 'Digitale Innovation für den Wintersport'
+          -
+            handle: intro
+            field:
+              type: textarea
+              display: Introduction
+              instructions: 'A brief summary or introductory text for the page.'
+              validate:
+                - required
+              default: 'Eine ebenso spannende wie komplexe Herausforderung, die eine innovative Lösung erfordert. Hier beginnt die Reise zu einem besseren Nutzererlebnis.'
+          -
+            handle: content_sections
+            field:
+              type: replicator
+              display: 'Content Sections'
+              instructions: 'Add sections to describe the content (e.g., details, features, outcomes).'
+              sets:
+                main:
+                  display: Main
+                  sets:
+                    text_block:
+                      display: 'Text Block'
+                      fields:
+                        -
+                          handle: heading
+                          field:
+                            type: text
+                            display: Heading
+                            instructions: 'A heading for this section.'
+                            default: Überblick
+                        -
+                          handle: content
+                          field:
+                            type: textarea
+                            display: Content
+                            instructions: 'Detailed text for this section.'
+                            default: 'Dieser Abschnitt beschreibt die Kernpunkte des Projekts und hebt wichtige Aspekte hervor.'
+                            width: 50
+                        -
+                          handle: bard_field
+                          field:
+                            remove_empty_nodes: false
+                            type: bard
+                            display: 'Bard Field'
+                            width: 50
+                            sets:
+                              project_main_info:
+                                display: 'Project Main Info'
+                                sets:
+                                  new_set:
+                                    display: 'New Set'
+                                    fields:
+                                      -
+                                        handle: grid_field
+                                        field:
+                                          type: grid
+                                          display: 'Grid Field'
+                                          fields:
+                                            -
+                                              handle: text_field
+                                              field:
+                                                type: text
+                                                display: Client
+                                                width: 50
+                                            -
+                                              handle: client_name
+                                              field:
+                                                type: text
+                                                display: 'Client Name'
+                                                width: 50
+                                            -
+                                              handle: services
+                                              field:
+                                                type: text
+                                                display: Services
+                                                width: 50
+                                            -
+                                              handle: services_details
+                                              field:
+                                                type: text
+                                                display: Services_details
+                                                width: 50
+                                            -
+                                              handle: area
+                                              field:
+                                                type: text
+                                                display: Area
+                                                width: 50
+                                            -
+                                              handle: area_details
+                                              field:
+                                                type: text
+                                                display: Area_details
+                                                width: 50
+                        -
+                          handle: project_hero_image
+                          field:
+                            container: assets
+                            type: assets
+                            display: 'Project Hero Image'
+                        -
+                          handle: english_translation
+                          field:
+                            type: textarea
+                            display: 'English Translation'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
