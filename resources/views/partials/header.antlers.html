@@ -1,9 +1,11 @@
 <header class="fixed top-0 left-0 w-full bg-[#1a1a1a] text-white p-4 transition-transform duration-300 ease-in-out z-50" id="header">
     <div class="flex items-center p-7">
       <!-- Logo -->
+      <a href="/">
       {{ header_content:company_logo }}
         <img src="{{ url }}" alt="{{ alt or 'Logo' }}" class="h-[50px] w-auto object-contain" />
       {{ /header_content:company_logo }}
+    </a>
 
       <!-- Navigation Tabs -->
       <nav class="flex-grow flex justify-center">
@@ -70,83 +72,67 @@
     
           // Smooth Scrolling and Active Tab
           const navTabs = document.querySelectorAll('.nav-tab');
-    navTabs.forEach(tab => {
-      tab.addEventListener('click', (e) => {
-        e.preventDefault();
-        const href = tab.getAttribute('href'); // e.g., "/en#about" or "#about"
-        const isSamePage = href.startsWith('#');
-        const anchor = isSamePage ? href.replace('#', '') : href.split('#')[1];
+        navTabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                e.preventDefault();
+                const href = tab.getAttribute('href'); // e.g., "/#about"
+                const anchor = href.split('#')[1]; // e.g., "about"
+                const isHomepage = window.location.pathname === '/' || window.location.pathname === '';
 
-        if (isSamePage) {
-          // Same-page navigation
-          const element = document.getElementById(anchor);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-            navTabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-          }
-        } else {
-          // Navigate to the homepage with anchor
-          window.location.href = href;
-        }
-      });
-    });
-    
-    const hash = window.location.hash.replace('#', ''); // e.g., "about"
-    if (hash) {
-      const element = document.getElementById(hash);
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth' });
-          navTabs.forEach(tab => {
-            tab.classList.remove('active');
-            if (tab.getAttribute('href').endsWith(`#${hash}`)) {
-              tab.classList.add('active');
-            }
-          });
-        }, 100); // Small delay to ensure page is fully loaded
-      }
-    }
-
-    // Set actifs based on scroll position
-    const sections = document.querySelectorAll('section[id], footer[id]');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const id = entry.target.id;
-            navTabs.forEach(tab => {
-              tab.classList.remove('active');
-              if (tab.getAttribute('href').endsWith(`#${id}`)) {
-                tab.classList.add('active');
-              }
+                if (isHomepage && anchor) {
+                    // Same-page navigation on homepage
+                    const element = document.getElementById(anchor);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                        navTabs.forEach(t => t.classList.remove('active'));
+                        tab.classList.add('active');
+                        // Update URL hash without reloading
+                        window.history.pushState(null, null, `#${anchor}`);
+                    }
+                } else {
+                    // Navigate to homepage with anchor
+                    window.location.href = href;
+                }
             });
-          }
         });
-      },
-      { threshold: 0.5 }
-    );
 
-    sections.forEach(section => observer.observe(section));
+        // Handle anchor in URL on page load
+        const hash = window.location.hash.replace('#', ''); // e.g., "about"
+        if (hash) {
+            const element = document.getElementById(hash);
+            if (element) {
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                    navTabs.forEach(tab => {
+                        tab.classList.remove('active');
+                        if (tab.getAttribute('href').endsWith(`#${hash}`)) {
+                            tab.classList.add('active');
+                        }
+                    });
+                }, 100); // Small delay to ensure page is fully loaded
+            }
+        }
 
-          // Language Toggle
-          const toggleButton = document.getElementById('language-toggle');
-          toggleButton.addEventListener('click', () => {
-            const currentLocale = '{{ locale }}';
-            const newLocale = currentLocale === 'en' ? 'de' : 'en';
-            let newPathname = window.location.pathname;
-    
-            if (newPathname.startsWith('/de') || newPathname.startsWith('/en')) {
-              newPathname = newPathname.replace(/^\/[a-z]{2}/, `/${newLocale}`);
-            } else {
-              newPathname = `/${newLocale}${newPathname}`;
-            }
-    
-            if (newPathname === `/${newLocale}/`) {
-              newPathname = `/${newLocale}`;
-            }
-    
-            window.location.href = newPathname;
-          });
-        });
-      </script>
+        // Set active tab based on scroll position
+        const sections = document.querySelectorAll('section[id], footer[id]');
+        console.log('Sections found:', sections); // Debug: Log sections
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        navTabs.forEach(tab => {
+                            tab.classList.remove('active');
+                            if (tab.getAttribute('href').endsWith(`#${id}`)) {
+                                tab.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            },
+            { threshold: 0.5 }
+        );
+
+        sections.forEach(section => observer.observe(section));
+    });
+</script>
