@@ -9,7 +9,7 @@
       <nav class="flex-grow flex justify-center">
         <div class="border-4 border-black rounded-lg inline-flex h-9 w-fit items-center justify-center p-[3px] bg-[#121212] shadow-lg">
           {{ header_content:header_items }}
-            <a href="#{{ href }}" class="nav-tab inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-colors duration-200 ease-in-out text-gray-400 hover:text-gray-200 bg-[#121212] hover:bg-gray-800 uppercase">
+            <a href="/#{{ href }}" class="nav-tab inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-colors duration-200 ease-in-out text-gray-400 hover:text-gray-200 bg-[#121212] hover:bg-gray-800 uppercase">
               {{ label }}
             </a>
           {{ /header_content:header_items }}
@@ -70,40 +70,65 @@
     
           // Smooth Scrolling and Active Tab
           const navTabs = document.querySelectorAll('.nav-tab');
+    navTabs.forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = tab.getAttribute('href'); // e.g., "/en#about" or "#about"
+        const isSamePage = href.startsWith('#');
+        const anchor = isSamePage ? href.replace('#', '') : href.split('#')[1];
+
+        if (isSamePage) {
+          // Same-page navigation
+          const element = document.getElementById(anchor);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+            navTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+          }
+        } else {
+          // Navigate to the homepage with anchor
+          window.location.href = href;
+        }
+      });
+    });
+    
+    const hash = window.location.hash.replace('#', ''); // e.g., "about"
+    if (hash) {
+      const element = document.getElementById(hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
           navTabs.forEach(tab => {
-            tab.addEventListener('click', (e) => {
-              e.preventDefault();
-              const href = tab.getAttribute('href').replace('#', '');
-              const element = document.getElementById(href);
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-                navTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.remove('active');
+            if (tab.getAttribute('href').endsWith(`#${hash}`)) {
+              tab.classList.add('active');
+            }
+          });
+        }, 100); // Small delay to ensure page is fully loaded
+      }
+    }
+
+    // Set actifs based on scroll position
+    const sections = document.querySelectorAll('section[id], footer[id]');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            navTabs.forEach(tab => {
+              tab.classList.remove('active');
+              if (tab.getAttribute('href').endsWith(`#${id}`)) {
                 tab.classList.add('active');
               }
             });
-          });
-    
-          // Set active tab based on current scroll position
-          const sections = document.querySelectorAll('section[id], footer[id]');
-          const observer = new IntersectionObserver(
-            (entries) => {
-              entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                  const id = entry.target.id;
-                  navTabs.forEach(tab => {
-                    tab.classList.remove('active');
-                    if (tab.getAttribute('href') === `#${id}`) {
-                      tab.classList.add('active');
-                    }
-                  });
-                }
-              });
-            },
-            { threshold: 0.5 }
-          );
-    
-          sections.forEach(section => observer.observe(section));
-    
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    sections.forEach(section => observer.observe(section));
+
           // Language Toggle
           const toggleButton = document.getElementById('language-toggle');
           toggleButton.addEventListener('click', () => {

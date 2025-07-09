@@ -70,7 +70,7 @@ data:
     -
       id: mcuj13fj
       label: Impressum
-      url: '#'
+      url: impressum
     -
       id: mcuj1jhd
       label: Datenschutz

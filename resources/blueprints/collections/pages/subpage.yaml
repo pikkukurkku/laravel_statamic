@@ -1,0 +1,80 @@
+title: Impressum
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              display: Title
+          -
+            handle: impressum_content
+            field:
+              type: bard
+              remove_empty_nodes: false
+              display: 'Impressum Content'
+              sets:
+                new_set:
+                  display: 'New Set'
+                  fields:
+                    -
+                      handle: adress_lines
+                      field:
+                        type: grid
+                        display: Address Lines
+                        fields:
+                          -
+                            handle: line
+                            field:
+                              type: text
+                              display: Line
+                    -
+                      handle: contact_data
+                      field:
+                        type: grid
+                        display: Contact Data
+                        fields:
+                          -
+                            handle: line
+                            field:
+                              type: text
+                              display: Line
+                    -
+                      handle: tax_information
+                      field:
+                        type: textarea
+                        display: 'Tax Information'
+                    -
+                      handle: legal_text
+                      field:
+                        type: textarea
+                        display: 'Legal Text'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - pages
+              max_items: 1
+              listable: false
+              localizable: true
+          -
+            handle: template
+            field:
+              type: template
+              display: Template

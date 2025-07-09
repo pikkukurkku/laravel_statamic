@@ -154,5 +154,5 @@ sections:
     type: seitwerk_video
     enabled: true
 updated_by: 30f3e27a-5870-4459-b308-e9de0bbdcbb5
-updated_at: 1751984262
+updated_at: 1752042631
 ---
