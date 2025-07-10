@@ -1,6 +1,7 @@
-data: {  }
+data:
+  alt: 'FIS Hero Image'
 size: 70657
-last_modified: 1752068894
+last_modified: 1752134196
 width: 1110
 height: 623
 mime_type: image/jpeg

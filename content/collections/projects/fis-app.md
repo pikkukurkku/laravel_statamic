@@ -1,9 +1,8 @@
 ---
 id: 19110a72-9377-41d2-ab06-2bc79a27dd7d
 blueprint: project
-hero_image: mockup-grafik.jpg
+hero_image: header.jpg
 title: 'Digitale Innovation für den Wintersport: Unsere Weiterentwicklung der FIS-App'
-intro: 'Veröffentlicht am 25.10.2024'
 content_sections:
   -
     id: mcw075w7
@@ -44,6 +43,8 @@ content_sections:
       So far, the news section of the app has been expanded so that users now have access to all news from the FIS website and can filter content according to their interests. The “FIS TV” section was redeveloped in terms of technology and design and published in time for the start of the 2024 Alpine World Cup season in Sölden. Users can now find the entire FIS video and live stream catalog directly in the app. In collaboration with Endeavor Streaming, a seamless video experience was created with a UI developed entirely by Seitwerk. Users also receive individual feeds based on their favorite athletes and disciplines.
     type: text_block
     enabled: true
+    project_hero_image:
+      - mockup-grafik.jpg
 updated_by: 30f3e27a-5870-4459-b308-e9de0bbdcbb5
-updated_at: 1752069080
+updated_at: 1752134227
 ---

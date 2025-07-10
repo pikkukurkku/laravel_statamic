@@ -1,31 +1,76 @@
-<article class="project-detail max-w-4xl mx-auto px-4 py-12">
-    <h1 class="text-4xl font-bold mb-6">{{ title }}</h1>
+<article class="project-detail max-w-7xl mx-auto px-4 py-12 mt-16">
+    <h1 class="text-4xl font-bold mb-6 max-w-6xl">{{ title }}</h1>
     <div class="content space-y-4">
         {{ if hero_image }}
             <img src="{{ hero_image | url }}" alt="{{ title }}" class="mb-6 rounded shadow" />
         {{ /if }}
-        <p class="text-sm text-gray-600 mb-6">{{ intro }}</p>
+        <p class="text-sm text-gray-600 mb-2">
+            Veröffentlicht am {{ date format="d.m.Y" }}
+        </p>
+        
+        <p class="text-base text-gray-800 mb-6">{{ intro }}</p>
+        
         
         {{ content_sections }}
             {{ if type == "text_block" }}
-                <section class="mb-8">
-                    <h2 class="text-2xl font-semibold mb-3">{{ heading }}</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <section class="mb-12">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
                         {{ if content }}
-                            <div class="prose max-w-none">{!! content | markdown !!}</div>
+                            <div class="lg:col-span-2">
+                                <div class="prose prose-lg max-w-none text-gray-800 leading-relaxed">
+                                    {{ content | markdown }}
+                                </div>
+                            </div>
                         {{ /if }}
                         
                         {{ if bard_field }}
-                            <div>
+                            <div class="lg:col-span-1">
                                 {{ bard_field }}
-                                    {{ if type == "set" }}
-                                        {{ if attrs:values:grid_field }}
-                                            <div class="client-info p-4 bg-gray-100 rounded">
-                                                {{ attrs:values:grid_field }}
-                                                    <p><strong>{{ text_field }}:</strong> {{ client_name }}</p>
-                                                    <p><strong>{{ services }}:</strong> {{ services_details }}</p>
-                                                    <p><strong>{{ area }}:</strong> {{ area_details }}</p>
-                                                {{ /attrs:values:grid_field }}
+                                    {{ if type == "new_set" }}
+                                        {{ if grid_field }}
+                                            <div class="space-y-8">
+                                                {{ grid_field }}
+                                                    <div class="border-b border-gray-200 pb-4">
+                                                        <div class="flex justify-between items-start">
+                                                            <div class="font-bold text-gray-900 text-sm uppercase tracking-wider">
+                                                                {{ text_field }}
+                                                            </div>
+                                                            <div class="text-right text-gray-700 font-medium">
+                                                                {{ client_name }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="border-b border-gray-200 pb-4">
+                                                        <div class="flex justify-between items-start">
+                                                            <div class="font-bold text-gray-900 text-sm uppercase tracking-wider">
+                                                                {{ services }}
+                                                            </div>
+                                                            <div class="text-right text-gray-700 font-medium">
+                                                                {{ services_details }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="border-b border-gray-200 pb-4">
+                                                        <div class="flex justify-between items-start">
+                                                            <div class="font-bold text-gray-900 text-sm uppercase tracking-wider">
+                                                                {{ area }}
+                                                            </div>
+                                                            <div class="text-right text-gray-700 font-medium">
+                                                                {{ area_details }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {{ /grid_field }}
+                                                
+                                                <!-- App Store Buttons -->
+                                                <div class="mt-8 space-y-4">
+                                                    <a href="#" class="block w-full border-2 border-gray-900 text-center py-3 px-6 font-bold text-gray-900 hover:bg-gray-900 hover:text-white transition-colors duration-200">
+                                                        App Store
+                                                    </a>
+                                                    <a href="#" class="block w-full border-2 border-gray-900 text-center py-3 px-6 font-bold text-gray-900 hover:bg-gray-900 hover:text-white transition-colors duration-200">
+                                                        Play Store
+                                                    </a>
+                                                </div>
                                             </div>
                                         {{ /if }}
                                     {{ /if }}
@@ -35,12 +80,15 @@
                     </div>
                     
                     {{ if project_hero_image }}
-                        <img src="{{ project_hero_image | url }}" alt="{{ heading }}" class="mt-6 rounded shadow" />
-                    {{ /if }}
+                    {{ project_hero_image }}
+    <img src="{{ url }}" alt="{{ title }}" class="mt-6 rounded shadow" />
+{{ /project_hero_image }}
+
+                {{ /if }}
+                
                     
                     {{ if english_translation }}
                         <div class="mt-6">
-                            <h3 class="text-xl font-semibold mb-3">English Translation</h3>
                             <div class="prose max-w-none whitespace-pre-line">{{ english_translation }}</div>
                         </div>
                     {{ /if }}

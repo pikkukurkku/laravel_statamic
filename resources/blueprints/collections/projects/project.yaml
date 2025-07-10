@@ -25,15 +25,6 @@ tabs:
                 - required
               default: 'Digitale Innovation für den Wintersport'
           -
-            handle: intro
-            field:
-              type: textarea
-              display: Introduction
-              instructions: 'A brief summary or introductory text for the page.'
-              validate:
-                - required
-              default: 'Eine ebenso spannende wie komplexe Herausforderung, die eine innovative Lösung erfordert. Hier beginnt die Reise zu einem besseren Nutzererlebnis.'
-          -
             handle: content_sections
             field:
               type: replicator
