@@ -1,6 +1,6 @@
 title: Projects
 route: /projects/{slug} 
-template: project
+template: projects/project
 revisions: false
 date_behavior:
   past: public
